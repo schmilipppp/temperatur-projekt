@@ -5,7 +5,7 @@ def connect_to_mariadb():
         host="localhost",
         user="user",
         password="temperatur123",
-        database="temperature_db"
+        database="temperatur_db"
     )
     print("Verbindung zur Datenbank aufgebaut...")
     return db_connection
@@ -25,7 +25,7 @@ def read_mariadb():
     db_connection = connect_to_mariadb()
     cursor = db_connection.cursor()
 
-    cursor.execute("SELECT timestamp, wert FROM temperature ORDER BY timestamp DESC LIMIT 10")
+    cursor.execute("SELECT timestamp, wert FROM temperatur ORDER BY timestamp DESC LIMIT 10")
     temperatures = cursor.fetchall()
 
     cursor.close

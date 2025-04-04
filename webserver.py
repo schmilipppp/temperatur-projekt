@@ -8,5 +8,5 @@ def index():
     temperatures = read_mariadb()
     return render_template("index.html", temperatures=temperatures)
 
-if __name__ == "__main__":
+def start_webserver():
     app.run(host="0.0.0.0", port=5000, debug=True)
