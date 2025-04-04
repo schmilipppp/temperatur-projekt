@@ -1,11 +1,15 @@
 import mysql.connector
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 def connect_to_mariadb():
     db_connection = mysql.connector.connect(
-        host="localhost",
-        user="user",
-        password="temperatur123",
-        database="temperatur_db"
+        host=os.getenv("DB_HOST"),
+        user=os.getenv("DB_USER"),
+        password=os.getenv("DB_PASSWORD"),
+        database=os.getenv("DB_NAME")
     )
     print("Verbindung zur Datenbank aufgebaut...")
     return db_connection
