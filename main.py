@@ -10,7 +10,7 @@ def read_and_save_temperature():
         temperature = read_temp()
         print(f"Aktuelle Temperatur: {temperature}°C")
         save_to_mariadb(temperature)
-        time.sleep(5)
+        time.sleep(60)
 
 def start_application():
     temperature_thread = threading.Thread(target=read_and_save_temperature)
